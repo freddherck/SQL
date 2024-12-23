@@ -1,0 +1,16 @@
+-- order items by price --
+SELECT item_name, price
+FROM superstore
+ORDER BY price;
+-- show the sum of all purchase --
+SELECT SUM(price)
+FROM superstore;
+-- show the price for items in the category of Kitchen Supplies --
+SELECT category, price
+FROM superstore
+WHERE category = 'Kitchen Supplies';
+-- show a stat about the items in the category of Electronics --
+SELECT 
+    AVG(price)
+FROM superstore
+WHERE category = 'Electronics'
