@@ -1,3 +1,6 @@
+--find the data set here:
+https://www.db-fiddle.com/f/PvBAaQwEUSWAxZCsg4Vmx/0
+--Queries start here at next line:
 -- order items by price --
 SELECT item_name, price
 FROM superstore
@@ -13,4 +16,4 @@ WHERE category = 'Kitchen Supplies';
 SELECT 
     AVG(price)
 FROM superstore
-WHERE category = 'Electronics'
+WHERE category = 'Electronics';
