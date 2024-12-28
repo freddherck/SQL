@@ -1,0 +1,25 @@
+--If companies in the Telecomunications industry got a 10% revenue increase, what would be their new revenue count (rounded as a whole number)?
+SELECT company_name, revenue as old_REV, ROUND(revenue*0.10 + (revenue)) as new_REV
+from fortune_companies
+WHERE industry="Telecommunications";
+--Write a query that uses OR to show the company names and avg employee tenure in the Technology and Energy industries.
+SELECT company_name, avg_employee_tenure
+FROM fortune_companies
+WHERE industry="Technology"
+OR industry="Energy";
+--Write a query that uses AND to show the company names in the Retail industry AND have at least 1,500 employees, AND have at least 10 paid time off days.
+SELECT company_name, employees, paid_time_off_days
+FROM fortune_companies
+WHERE industry="Retail"
+AND employees>=1500
+AND paid_time_off_days>=10;
+--Select all the companies and their industries that have an average of at least $250.5B per year.
+SELECT company_name, AVG(revenue) as avg_revenue
+FROM fortune_companies
+GROUP BY industry
+HAVING avg_revenue>=250.5;
+--Calculate how many maternity leave weeks per year for companies in ALL industries where the average employee tenure is at least 6.
+SELECT company_name, industry, avg_employee_tenure, SUM(maternity_leave_weeks) as total_MLW
+FROM fortune_companies
+GROUP BY industry
+HAVING avg_employee_tenure >=6;
