@@ -1,3 +1,6 @@
+--find the data set here:
+https://www.db-fiddle.com/f/saxdDCCyos6z6UdpjeEXSJ/0
+--Queries start here at next line:
 --If companies in the Telecomunications industry got a 10% revenue increase, what would be their new revenue count (rounded as a whole number)?
 SELECT company_name, revenue as old_REV, ROUND(revenue*0.10 + (revenue)) as new_REV
 from fortune_companies
